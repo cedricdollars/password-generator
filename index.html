@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <script src="index.js" defer></script>
+    <title>Password generator</title>
+  </head>
+  <body>
+    <div class="container">
+      <h2 id="passwordOutput">Générateur de mot de passe</h2>
+      <div class="container-generator" id="container-generator">
+        <input
+          type="range"
+          min="4"
+          max="24"
+          step="1"
+          id="password-length"
+          value="8"
+          oninput="document.getElementById('display-password').value=this.value"
+        />
+        <input
+          type="text"
+          value="8"
+          maxlength="2"
+          id="display-password"
+          oninput="document.getElementById('password-length').value=this.value"
+        />
+      </div>
+      <div class="flex justify-content-center align-items-center">
+        <input type="checkbox" id="lowercase" />
+        <label class="labelCheck" for="lowercase">a-z</label>
+
+        <input type="checkbox" id="uppercase" />
+        <label class="labelCheck" for="uppercase">A-Z</label>
+
+        <input type="checkbox" id="numbers" />
+        <label class="labelCheck" for="numbers">0-9</label>
+
+        <input type="checkbox" id="symbols" />
+        <label class="labelCheck" for="symbols">!-?</label>
+      </div>
+      <div class="container-button">
+        <button id="generateButton" type="button" onclick="generatePassword()">
+          Cliquer ici pour générer votre mot de passe
+        </button>
+      </div>
+      <div id="messageAlert"></div>
+    </div>
+  </body>
+</html>
